@@ -29,12 +29,12 @@ $(document).ready(function () {
 
             } else {
                 $(children[index]).css({
-                    'display' : 'block',
-                    'margin-left' : '150px'
-                    });
+                    'display': 'block',
+                    'margin-left': '150px'
+                });
             }
-            
-            console.log($('children['+index+']'));
+
+            console.log($('children[' + index + ']'));
 
         }
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
         var list_images = div_Work;
         console.log(list_images);
         var element = div_Work.children[num_element];
-        $(element).css('display','none');
+        $(element).css('display', 'none');
     }
     /**
      * Print the first image and hide other images.
@@ -58,11 +58,11 @@ $(document).ready(function () {
 
         var children = div_Work.children;
 
-        
+
         for (let index = 1; index < children.length; index++) {
 
 
-            $(children[index]).css('display','none');
+            $(children[index]).css('display', 'none');
 
 
 
@@ -76,14 +76,14 @@ $(document).ready(function () {
     function showForm() {
         hideOtherElements(9);
         // var section_form=document.getElementById('ver-form').getElementsByTagName('div');
-        
-        
-        
-        
-        
-        $("#ver-form div").css('display','block');
-       
-        
+
+
+
+
+
+        $("#ver-form div").css('display', 'block');
+
+
         //document.getElementById('ver-form').getElementsByTagName('div')[1].style = 'display:block';
 
         //console.log(section_form);
@@ -97,11 +97,11 @@ $(document).ready(function () {
         console.log('ppppppp');
         console.log(list_Div[1]);
         for (let index = 1; index < list_Div.length; index++) {
-            var object=list_Div[index];
+            var object = list_Div[index];
             if (index != positionElement) {
-                $(object).css('display','none');
+                $(object).css('display', 'none');
             } else {
-                $(object).css('display','block');
+                $(object).css('display', 'block');
             }
 
 
@@ -173,8 +173,8 @@ $(document).ready(function () {
 
     /* Ejercicio 3 */
     $("#slider").click(function () {
-        var slideer=$('#ver-slider')[0];
-       
+        var slideer = $('#ver-slider')[0];
+
         print_first_image(slideer);
         var index = 0;
 
@@ -210,22 +210,23 @@ $(document).ready(function () {
 
 
         // Exception! Show necessary checkbox for other functions.
-        $("#mostrar_enlace").css('display','block');
+        $("#mostrar_enlace").css('display', 'block');
         var checkbox = $('#ver-ocultar-enlace')[0]; // Object for checking if its selected one actions else other actions.
         console.log(checkbox.checked);
         var checkedElement = checkbox.checked;
         // Problem !! its necessary do F5 for the changes.
         if (checkedElement) {
             console.log('gg');
-            var links_Notices = Array($('#noticia-1'),$('#noticia-2'),$('#noticia-3'));
+            var links_Notices = Array($('#noticia-1'), $('#noticia-2'), $('#noticia-3'));
             links_Notices.forEach(element => {
-                $(element).css('display','none')
+                $(element).css('display', 'none')
 
             });
         }
 
 
         //------------
+
 
     })
 
@@ -235,12 +236,45 @@ $(document).ready(function () {
         hideOtherElements(5);
         // Exception! Show necessary radio for other functions.
 
-        var div_radio = $('#radio');
+        var div_radio = $('#radio')[0];
 
 
         //Change Style (display:none) for the style (display:block).
 
-        $(div_radio).css('display','block')
+        $(div_radio).css('display', 'block');
+        $("#radio div").css('display', 'inline');
+        var frutas = $("#radio #fruta")[0];
+        var verdura = $("#radio #verdura")[0];
+        console.log('sssssssssssssss');
+        console.log(frutas);
+        console.log('dddddddddddddd');
+        console.log(verdura);
+        var tabla_verdura = $(".datos")[1];
+        var tabla_fruta_uno =$(".datos")[0];
+        var tabla_fruta_dos= $('.datos')[2];
+        if ($(verdura).is(':checked')) {
+            console.log('mam'); console.log($(".datos"));
+            $(tabla_verdura).css('background-color','yellowgreen');
+        }
+        if (!$(verdura).is(':checked')) {
+            console.log('mam'); console.log($(".datos"));
+            $(tabla_verdura).css('background-color','#FFFFFF');
+        }
+        if ($(frutas).is(':checked')) {
+            console.log('mamffffffffff'); console.log($(".datos"));
+            $(tabla_fruta_uno).css('background-color','yellowgreen');
+            $(tabla_fruta_dos).css('background-color','yellowgreen');
+            
+        }
+        else if (!$(frutas).is(':checked')) {
+            console.log('mamddddddddhfbdd'); console.log($(".datos"));
+            $(tabla_fruta_uno).css('background-color','#FFFFFF');
+            $(tabla_fruta_dos).css('background-color','#FFFFFF');
+
+        }
+
+
+        //$('#radio')[0].css('display','block');
 
 
 
